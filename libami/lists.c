@@ -1,4 +1,5 @@
 #include "libami.h"
+#include <string.h>
 
 #ifndef AMIGAOS
 
@@ -52,7 +53,7 @@ void Insert(struct List *list, struct Node *node, struct Node *after)
   if(!after) after = (struct Node *)&list->lh_Head;
   node->ln_Succ = after->ln_Succ;
   node->ln_Pred = after;
-  after->ln_Succ->ln_Pred = node;  
+  after->ln_Succ->ln_Pred = node;
   after->ln_Succ = node;
 }
 
@@ -69,7 +70,7 @@ void Enqueue(struct List *list, struct Node *node)
     before = before->ln_Succ;
   node->ln_Succ = before;
   node->ln_Pred = before->ln_Pred;
-  before->ln_Pred->ln_Succ = node;  
+  before->ln_Pred->ln_Succ = node;
   before->ln_Pred = node;
 }
 

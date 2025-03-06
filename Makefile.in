@@ -4,7 +4,7 @@ SHELL = /bin/sh
 CC = @CC@
 LEX = @LEX@
 YACC = @YACC@
-CFLAGS = @CFLAGS@
+CFLAGS = @CFLAGS@ -std=gnu89
 YFLAGS = -d
 DEFS = @DEFS@
 ALL_CFLAGS = -I. -I@srcdir@ -I@srcdir@/libami $(DEFS) $(CFLAGS) @X_CFLAGS@
